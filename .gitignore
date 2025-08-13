@@ -1,0 +1,10 @@
+# deb build outputs
+*.deb
+*.dsc
+*.build
+*.buildinfo
+*.changes
+*.tar.*
+debian/.debhelper/
+debian/files
+**/.DS_Store
