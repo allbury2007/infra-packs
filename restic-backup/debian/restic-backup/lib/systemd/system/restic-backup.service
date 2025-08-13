@@ -1,0 +1,13 @@
+[Unit]
+Description=Restic backup job (unified)
+Wants=network-online.target
+After=network-online.target
+[Service]
+Type=oneshot
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7
+Environment=HOME=/root
+Environment=RESTIC_PASSWORD_FILE=/root/.restic_pass
+Environment=RESTIC_REPOSITORY=sftp:restic@10.128.0.40:.
+ExecStart=/usr/local/bin/run-restic-backup.sh

@@ -1,0 +1,5 @@
+src/init-ca.sh usr/local/sbin/
+src/issue-cert.sh usr/local/sbin/
+src/revoke-cert.sh usr/local/sbin/
+src/gen-crl.sh usr/local/sbin/
+src/backup-pki.sh usr/local/sbin/

@@ -1,0 +1,6 @@
+src/run-restic-backup.sh usr/local/bin/
+systemd/restic-backup.service lib/systemd/system/
+systemd/restic-backup.timer lib/systemd/system/
+config/include.example etc/restic-backup/
+config/exclude.example etc/restic-backup/
+logrotate/restic-backups etc/logrotate.d/

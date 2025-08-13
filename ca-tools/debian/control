@@ -1,0 +1,13 @@
+Source: ca-tools
+Section: admin
+Priority: optional
+Maintainer: Aleksei Goncharov <allbury2007@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.0
+Homepage: https://github.com/allbury2007
+
+Package: ca-tools
+Architecture: all
+Depends: bash, easy-rsa, ${misc:Depends}
+Description: Certificate Authority helper scripts
+ Automates creation of PKI, client/server certs, and CRL.

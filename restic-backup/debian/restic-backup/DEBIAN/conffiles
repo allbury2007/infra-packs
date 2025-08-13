@@ -1,0 +1,3 @@
+/etc/logrotate.d/restic-backups
+/etc/restic-backup/exclude.example
+/etc/restic-backup/include.example

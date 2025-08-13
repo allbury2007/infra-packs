@@ -1,0 +1,14 @@
+Source: restic-backup
+Section: admin
+Priority: optional
+Maintainer: Aleksei Goncharov <allbury2007@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.0
+Homepage: https://github.com/allbury2007
+
+Package: restic-backup
+Architecture: all
+Depends: bash, restic, ${misc:Depends}
+Description: Unified restic backup (systemd + logrotate)
+ Installs a systemd oneshot service + timer to run nightly restic backups,
+ per-host include/exclude, and a Prometheus freshness metric via node_exporter.

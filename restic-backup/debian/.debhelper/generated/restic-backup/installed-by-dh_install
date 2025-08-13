@@ -1,0 +1,6 @@
+./src/run-restic-backup.sh
+./systemd/restic-backup.service
+./systemd/restic-backup.timer
+./config/include.example
+./config/exclude.example
+./logrotate/restic-backups

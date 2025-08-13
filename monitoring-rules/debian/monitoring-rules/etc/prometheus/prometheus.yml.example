@@ -1,0 +1,41 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  scrape_timeout: 10s
+  external_labels: { cluster: "lab", env: "prod" }
+
+rule_files:
+  - /etc/prometheus/rules/*.yml
+
+alerting:
+  alertmanagers:
+    - static_configs: [ { targets: ['127.0.0.1:9093'] } ]
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['127.0.0.1:9090']
+
+  - job_name: 'node_exporter_nodes'
+    static_configs:
+      - targets: ['10.128.0.30:9100','10.128.0.20:9100','10.128.0.10:9100','10.128.0.40:9100']
+
+  - job_name: 'blackbox_http'
+    metrics_path: /probe
+    params: { module: [http_2xx] }
+    static_configs:
+      - targets: ['http://10.128.0.30:3000/login','http://10.128.0.30:9090/-/ready']
+    relabel_configs:
+      - { source_labels: [__address__], target_label: __param_target }
+      - { source_labels: [__param_target], target_label: instance }
+      - { target_label: __address__, replacement: 127.0.0.1:9115 }
+
+  - job_name: 'blackbox_icmp_vpn'
+    metrics_path: /probe
+    params: { module: [icmp] }
+    static_configs:
+      - targets: ['10.128.0.20']
+    relabel_configs:
+      - { source_labels: [__address__], target_label: __param_target }
+      - { source_labels: [__param_target], target_label: instance }
+      - { target_label: __address__, replacement: 127.0.0.1:9115 }

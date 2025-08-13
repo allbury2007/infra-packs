@@ -1,0 +1,3 @@
+/opt
+/var/backups
+# add host-specific paths (e.g., /srv/pki/easy-rsa)

@@ -1,0 +1,5 @@
+./src/init-ca.sh
+./src/issue-cert.sh
+./src/revoke-cert.sh
+./src/gen-crl.sh
+./src/backup-pki.sh

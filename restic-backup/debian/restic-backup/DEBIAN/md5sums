@@ -1,0 +1,4 @@
+cd440f3f0562018c16f2d4478fb5c29d  lib/systemd/system/restic-backup.service
+6942c0e6a82743b96a6b2aad6ce4ec8e  lib/systemd/system/restic-backup.timer
+4c63ad8aa8d628b0ecfc98099fa39e3f  usr/local/bin/run-restic-backup.sh
+5a745c8feff4f3e13c5db707d7046673  usr/share/doc/restic-backup/changelog.gz

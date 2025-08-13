@@ -1,0 +1,14 @@
+Source: vpn-tools
+Section: admin
+Priority: optional
+Maintainer: Aleksei Goncharov <allbury2007@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.0
+Homepage: https://github.com/allbury2007
+
+Package: vpn-tools
+Architecture: all
+Depends: bash, openvpn, ${misc:Depends}
+Description: VPN helper scripts (OpenVPN tools)
+ Installs helper scripts: iptables policy and a .ovpn builder; ships an
+ OpenVPN server.conf example.

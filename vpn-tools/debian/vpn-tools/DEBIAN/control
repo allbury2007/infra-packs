@@ -1,0 +1,12 @@
+Package: vpn-tools
+Version: 0.1.0
+Architecture: all
+Maintainer: Aleksei Goncharov <allbury2007@gmail.com>
+Installed-Size: 16
+Depends: bash, openvpn
+Section: admin
+Priority: optional
+Homepage: https://github.com/allbury2007
+Description: VPN helper scripts (OpenVPN tools)
+ Installs helper scripts: iptables policy and a .ovpn builder; ships an
+ OpenVPN server.conf example.

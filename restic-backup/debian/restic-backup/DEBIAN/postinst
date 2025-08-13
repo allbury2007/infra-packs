@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+install -d -m 755 /etc/restic-backup
+[ -f /etc/restic-backup/include ] || cp -n /etc/restic-backup/include.example /etc/restic-backup/include 2>/dev/null || true
+[ -f /etc/restic-backup/exclude ] || cp -n /etc/restic-backup/exclude.example /etc/restic-backup/exclude 2>/dev/null || true
+if command -v systemctl >/dev/null 2>&1; then
+  systemctl daemon-reload || true
+  systemctl enable --now restic-backup.timer || true
+fi
+exit 0

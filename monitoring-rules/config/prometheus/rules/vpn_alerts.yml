@@ -1,0 +1,25 @@
+groups:
+  - name: vpn_checks
+    rules:
+      - alert: VPNSystemdServiceDown
+        expr: |
+          (
+            node_systemd_unit_state{instance="10.128.0.20:9100", name="openvpn.service", state="active"} == 0
+          )
+          OR
+          (
+            node_systemd_unit_state{instance="10.128.0.20:9100", name="openvpn-server@server.service", state="active"} == 0
+          )
+        for: 2m
+        labels: { severity: critical }
+        annotations:
+          summary: "OpenVPN service down on VPN node"
+          description: "OpenVPN systemd unit appears inactive."
+
+      - alert: VPNPort1194UDPDown
+        expr: probe_success{job="blackbox_udp_vpn", instance="10.128.0.20:1194"} == 0
+        for: 1m
+        labels: { severity: critical }
+        annotations:
+          summary: "OpenVPN UDP port unreachable"
+          description: "Blackbox UDP probe failing for 1 minute."

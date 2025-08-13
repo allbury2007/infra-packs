@@ -1,0 +1,11 @@
+Package: ca-tools
+Version: 0.1.0
+Architecture: all
+Maintainer: Aleksei Goncharov <allbury2007@gmail.com>
+Installed-Size: 14
+Depends: bash, easy-rsa
+Section: admin
+Priority: optional
+Homepage: https://github.com/allbury2007
+Description: Certificate Authority helper scripts
+ Automates creation of PKI, client/server certs, and CRL.

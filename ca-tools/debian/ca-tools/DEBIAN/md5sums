@@ -1,0 +1,6 @@
+51d8f08956c61e215b6a8030eed8c19b  usr/local/sbin/backup-pki.sh
+d980615c0a39974730ca53ad104fff39  usr/local/sbin/gen-crl.sh
+0c1f83bfbd94dc541911a4cd0ef552a9  usr/local/sbin/init-ca.sh
+54515f444ca306ba0af41bd95d302479  usr/local/sbin/issue-cert.sh
+ed245c4f7a3ab9b73079d73472c7f12d  usr/local/sbin/revoke-cert.sh
+69b547720ef38da4fbf450ec0d6ccb1b  usr/share/doc/ca-tools/changelog.gz

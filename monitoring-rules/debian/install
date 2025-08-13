@@ -1,0 +1,7 @@
+config/prometheus/prometheus.yml.example etc/prometheus/
+config/prometheus/blackbox.yml.example etc/prometheus/
+config/prometheus/blackbox_targets.yml.example etc/prometheus/
+config/alertmanager/alertmanager.yml.example etc/prometheus/
+config/prometheus/rules/alerts-uptime-http.yml etc/prometheus/rules/
+config/prometheus/rules/node_basics.yml        etc/prometheus/rules/
+config/prometheus/rules/vpn_alerts.yml         etc/prometheus/rules/

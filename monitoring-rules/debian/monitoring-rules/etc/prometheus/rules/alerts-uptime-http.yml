@@ -1,0 +1,24 @@
+groups:
+  - name: uptime-and-http
+    rules:
+      - alert: BlackboxHttpDown
+        expr: probe_success{job="blackbox_http"} == 0
+        for: 2m
+        labels: { severity: critical }
+        annotations:
+          summary: "HTTP probe failed: {{ $labels.instance }}"
+          description: "Blackbox probe to {{ $labels.instance }} failed for 2 minutes."
+      - alert: HttpStatusNot200
+        expr: probe_http_status_code{job="blackbox_http"} != 200
+        for: 2m
+        labels: { severity: warning }
+        annotations:
+          summary: "Non-200 HTTP status at {{ $labels.instance }} ({{ $value }})"
+          description: "Endpoint returned non-200 status for 2 minutes."
+      - alert: HttpLatencyHigh
+        expr: probe_duration_seconds{job="blackbox_http"} > 2
+        for: 5m
+        labels: { severity: warning }
+        annotations:
+          summary: "High HTTP latency at {{ $labels.instance }}"
+          description: "Probe duration > 2s for 5 minutes."

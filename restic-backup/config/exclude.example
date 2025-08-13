@@ -1,0 +1,11 @@
+/bin
+/boot
+/dev
+/proc
+/sys
+/tmp
+/var/tmp
+/var/cache
+/var/lib/apt/lists
+/var/log/journal
+# /var/lib/docker

@@ -1,0 +1,16 @@
+route:
+  receiver: 'email-default'
+  group_by: ['alertname','instance']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 3h
+
+receivers:
+  - name: 'email-default'
+    email_configs:
+      - to: '{{ env "AM_TO" | default "admin@example.com" }}'
+        from: '{{ env "AM_FROM" | default "alert@example.com" }}'
+        smarthost: '{{ env "AM_SMARTHOST" | default "smtp.example.com:587" }}'
+        auth_username: '{{ env "AM_USER" | default "" }}'
+        auth_password: '{{ env "AM_PASS" | default "" }}'
+        require_tls: true

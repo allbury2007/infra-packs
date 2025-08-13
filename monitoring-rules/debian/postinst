@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+install -d -m 755 /etc/alertmanager
+touch /etc/alertmanager/alertmanager.env
+chmod 600 /etc/alertmanager/alertmanager.env
+
+if command -v promtool >/dev/null 2>&1; then
+  for f in /etc/prometheus/rules/*.yml; do
+    [ -f "$f" ] && promtool check rules "$f" || true
+  done
+fi
+
+if command -v curl >/dev/null 2>&1; then
+  curl -fsS -XPOST http://127.0.0.1:9090/-/reload >/dev/null 2>&1 || true
+  curl -fsS -XPOST http://127.0.0.1:9093/-/reload >/dev/null 2>&1 || true
+fi
+exit 0
