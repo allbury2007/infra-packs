@@ -6,7 +6,7 @@ This guide explains how to deploy, configure, and maintain the reference infrast
 | Role                  | Hostname           | Internal IP | External IP      | Ports (ingress)                 |
 |-----------------------|--------------------|-------------|------------------|---------------------------------|
 | Certificate Authority | ca-server          | 10.128.0.10 | — (internal only)| SSH 22 (VPC / IAP), Easy-RSA    |
-| VPN                   | vpn-server         | 10.128.0.20 | Public (static)  | 22/tcp, **1194/udp**            |
+| VPN                   | vpn-server         | 10.128.0.20 | Public (static)  | 22/tcp, 1194/udp                |
 | Monitoring            | monitoring-server  | 10.128.0.30 | Public (static)  | 22/tcp, 9090/tcp (Prometheus), 3000/tcp (Grafana) |
 | Backups               | backup-server      | 10.128.0.40 | — (internal only)| 22/tcp (SFTP for restic)        |
 
