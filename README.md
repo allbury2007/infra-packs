@@ -34,7 +34,12 @@ Download `.deb` packages from [Releases](https://github.com/allbury2007/infra-pa
 ```bash
 sudo dpkg -i package_name.deb
 ```
+## Documentation
 
+- [System Administrator Guide](docs/sysadmin-guide.md)
+- [VPN User Guide](docs/vpn-user-guide.md)
+- [Backup System](docs/backup-system.md)
+- [Infrastructure Roadmap](docs/infrastructure-roadmap.md)
 
 ## License
 MIT License — see [LICENSE](./LICENSE) for details.
