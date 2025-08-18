@@ -19,3 +19,14 @@ debian/files
 *.dsc
 *.tar.*
 /rel/
+# Debian build artefacts
+**/debian/.debhelper/
+**/debian/*/DEBIAN/
+**/debian/files
+**/debian/changelog.dch
+*.deb
+*.changes
+*.buildinfo
+*.dsc
+*.tar.*
+/rel/
