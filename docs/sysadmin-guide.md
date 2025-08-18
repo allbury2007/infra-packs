@@ -51,10 +51,10 @@ Recommended machine sizes:
 After cloning the repository, install the provided `.deb` packages:
 
 ```bash
-sudo dpkg -i restic-backup_0.1.0_all.deb
-sudo dpkg -i vpn-tools_0.1.0_all.deb
-sudo dpkg -i ca-tools_0.1.0_all.deb
-sudo dpkg -i monitoring-rules_0.1.0_all.deb
+sudo dpkg -i   ca-tools_0.1.1_all.deb   vpn-tools_0.1.1_all.deb   restic-backup_0.1.1_all.deb   monitoring-rules_0.1.1_all.deb
+
+# if dpkg reports missing dependencies:
+sudo apt-get -f install
 ```
 
 ---
